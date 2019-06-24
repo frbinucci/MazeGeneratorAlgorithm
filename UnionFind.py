@@ -26,6 +26,6 @@ class UnionFind:
                 self.rank[yRoot] += 1
 
     def printParent(self):
-        print("index: ", list(range(9)))
+        print("index: ", list(range(len(self.parent))))
         print("parent: ", self.parent, sep='')
 

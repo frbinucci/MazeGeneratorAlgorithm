@@ -29,12 +29,10 @@ In questa sezione sono contenute le funzioni di test. Tali funzioni ricevono un 
 Tale parametro definisce il numero di campioni su cui effettuare le varie simulazioni. 
 Si effettuano simulazioni per grafi dotati di un numero di nodi da 1 sino a samples*samples'''
 def testGenerateGraph(samples):
-    testArray = [None] * samples
     timeArray = [None] * samples
     for i in range(0,samples):
         rows = i+1
         columns = i+1
-        testArray[i] = rows*columns
         timestamp1 = datetime.timestamp(datetime.now())
         Maze.generateGraph(rows, columns)
         timestamp2 = datetime.timestamp(datetime.now())
@@ -42,12 +40,10 @@ def testGenerateGraph(samples):
     return timeArray
 
 def testKruskal(samples):
-    testArray = [None] * samples
     timeArray = [None] * samples
     for i in range(0,samples):
         rows = i+1
         columns = i+1
-        testArray[i] = rows*columns
         G = Maze.generateGraph(rows, columns)
         timestamp1 = datetime.timestamp(datetime.now())
         Maze.kruskalAlgorithm(G)
